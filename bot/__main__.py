@@ -185,15 +185,15 @@ async def restart_notification():
                 await aioremove(".restartmsg")
             else:
                 okda = msg
-                okda = okda.replace("⌬ Bot Restarted!", "")
-                await bot.send_message(chat_id=int(6124899529), text=okda, disable_web_page_preview=True, disable_notification=True)
+                okd = okda.replace("⌬ Bot Restarted!", "")
+                await bot.send_message(chat_id=int(6124899529), text=okd, disable_web_page_preview=True, disable_notification=True)
         except Exception as e:
             LOGGER.error(e)
 
     if INCOMPLETE_TASK_NOTIFIER and DATABASE_URL:
         if notifier_dict := await DbManger().get_incomplete_tasks():
             for cid, data in notifier_dict.items():
-                msg = BotTheme('RESTART_SUCCESS', time=now.strftime('%I:%M:%S %p'), date=now.strftime('%d/%m/%y'), timz=config_dict['TIMEZONE'], version=get_version()) if cid == chat_id else BotTheme('RESTARTED')
+                msg = " \n"
                 msg += "\n"
                 for tag, links in data.items():
                     msg += f"\n"
