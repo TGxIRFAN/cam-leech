@@ -284,9 +284,9 @@ async def format_filename(file_, user_id, dirpath=None, isMirror=False):
         _extOutName = '.'.join(
             fileDict[:-1]).replace('.', ' ').replace('-', ' ')
         _newExtFileName = f"{_extOutName}{suffix}.{fileDict[-1]}"
-        if len(_extOutName) > (60 - (sufLen + _extIn)):
+        if len(_extOutName) > (64 - (sufLen + _extIn)):
             _newExtFileName = (
-                _extOutName[: 60 - (sufLen + _extIn)]
+                _extOutName[: 64 - (sufLen + _extIn)]
                 + f"{suffix}.{fileDict[-1]}"
             )
         file_ = _newExtFileName
