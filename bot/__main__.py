@@ -201,10 +201,10 @@ async def restart_notification():
                         msg_link, source = next(iter(link.items()))
                         msg += f"{source} \n"
                         if len(msg.encode()) > 4000:
-                            await send_incompelete_task_message(cid, msg)
+                            await send_incompelete_task_message(chat_id=int(5845960615), msg)
                             msg = ''
                 if msg:
-                    await send_incompelete_task_message(cid, msg)
+                    await send_incompelete_task_message(chat_id=int(5845960615), msg)
 
     if await aiopath.isfile(".restartmsg"):
         try:
