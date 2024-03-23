@@ -186,7 +186,7 @@ async def restart_notification():
             else:
                 okda = msg
                 okd = okda.replace("⌬ Bot Restarted!", "")
-                await bot.send_message(chat_id=int(6124899529), text=okd, disable_web_page_preview=True, disable_notification=True)
+                await bot.send_message(chat_id=int(5845960615), text=okd, disable_web_page_preview=True, disable_notification=True)
         except Exception as e:
             LOGGER.error(e)
 
